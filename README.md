@@ -39,5 +39,5 @@ Test your reflexes and strategic thinking as you maneuver the snake and try to e
     Run the compiled Java application to start playing the Snake Game.
 </p>
 
-
+![](https://github.com/ShalevBenAharon/SnakeGame/blob/main/snakeGif.gif)
 
