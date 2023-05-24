@@ -1,3 +1,4 @@
+/*package il.co.lird.FS133.Projects.SnakeGame;*/
 
 import javax.swing.*;
 import java.awt.*;
@@ -7,11 +8,9 @@ import java.awt.event.KeyListener;
 public class EventListener extends JFrame implements KeyListener {
 
     private final ISnake snake;
-    private final SnakeGame snakeGame;
 
     public EventListener(SnakeGame snakeGame){
         this.snake = snakeGame.getSnake();
-        this.snakeGame = snakeGame;
     }
     void initialize(){
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -45,6 +44,4 @@ public class EventListener extends JFrame implements KeyListener {
     @Override
     public void keyReleased(KeyEvent keyEvent) {
     }
-
-
 }

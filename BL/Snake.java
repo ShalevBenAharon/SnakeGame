@@ -1,3 +1,5 @@
+/*package il.co.lird.FS133.Projects.SnakeGame;*/
+
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -10,7 +12,7 @@ public class Snake implements ISnake {
     private ArrayList<Point> snakeBody = new ArrayList<>();
 
     private static int snakeSize = 1;
-    private static Direction curDirction = Direction.RIGHT;
+    private static Direction curDirection = Direction.RIGHT;
 
     public Snake(int boardHeight, int boardWidth){
         snakeX = boardWidth / 2;
@@ -19,10 +21,10 @@ public class Snake implements ISnake {
         snakeBody.add(snakeHead);
     }
     public Direction getCurDirection() {
-        return curDirction;
+        return curDirection;
     }
     public void setCurMove(Direction move){
-        curDirction = move;
+        curDirection = move;
     }
 
     public void snakeMove(Direction direction){
@@ -40,7 +42,7 @@ public class Snake implements ISnake {
                 IncrementSnakeX();
                 break;
             case STOP:
-                curDirction = Direction.STOP;
+                curDirection = Direction.STOP;
                 break;
         }
     }
@@ -76,10 +78,10 @@ public class Snake implements ISnake {
         }
     }
 
-    public void snakeExptendBody(Point head) {
+    public void snakeExtendBody(Point head) {
 
         Point newHead = null;
-        switch (curDirction) {
+        switch (curDirection) {
             case UP:
                 newHead = new Point(head.x, head.y - 1);
                 break;
@@ -102,9 +104,5 @@ public class Snake implements ISnake {
     public void setSnakeSize() {
         ++snakeSize;
     }
-    public int getSnakeSize() {
-        return snakeSize;
-    }
-
 
 }

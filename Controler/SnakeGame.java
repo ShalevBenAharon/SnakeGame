@@ -1,8 +1,9 @@
+/*package il.co.lird.FS133.Projects.SnakeGame;*/
+
 
 public class SnakeGame {
-    private IBoard board;
-    private ISnake snake;
-
+    private final IBoard board;
+    private final ISnake snake;
     private boolean isRunning;
 
     public SnakeGame(int boardHeight, int boardWidth) {
@@ -14,7 +15,7 @@ public class SnakeGame {
         board.displayBoard();
     }
 
-    public void startGame(){
+    public void startGame() {
         setRunning(true);
 
         while (isRunning) {
@@ -38,10 +39,13 @@ public class SnakeGame {
                     continue;
 
             }
-                try {
-                    Thread.sleep(300);
-                } catch (InterruptedException e) {
-                }
+
+            try{
+                Thread.sleep(300);
+            }catch(InterruptedException e){
+                throw new IllegalStateException("Thread Sleep");
+            }
+
                 displayBoard();
         }
 

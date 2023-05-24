@@ -1,3 +1,4 @@
+/*package il.co.lird.FS133.Projects.SnakeGame;*/
 
 import java.awt.*;
 import java.util.List;
@@ -17,7 +18,7 @@ public class Board implements IBoard {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
     ISnake snake;
-    List snakeBody;
+    List<Point>snakeBody;
 
     public Board(int height, int width, ISnake snake) {
         BOARD_HEIGHT = height;
@@ -30,19 +31,19 @@ public class Board implements IBoard {
     public void displayBoard() {
         for (int y = 0; y < BOARD_HEIGHT; ++y) {
             for (int x = 0; x < BOARD_WIDTH; ++x) {
-                Point cordinats = new Point(x, y);
-                Point head = (Point) snakeBody.get(0);
+                Point coordinates = new Point(x, y);
+                Point head = snakeBody.get(0);
 
-                if (!isValid() || !isCollition(head, snakeBody)) {
+                if (!isValid() || !isCollision(head, snakeBody)) {
                     if(snake.getCurDirection()!= Direction.STOP) {
                         snake.snakeMove(Direction.STOP);
                     }
                 }
-                if (snakeBody.contains(cordinats)) {
+                if (snakeBody.contains(coordinates)) {
                         System.out.print(ANSI_GREEN + SNAKE_BODY + ANSI_RESET);
                 } else if (y == 0 || y == BOARD_HEIGHT - 1) {//Top-Bottom
                     System.out.print(BORDER_CELL);
-                } else if (y > 0 && y < BOARD_HEIGHT) { // Sides
+                } else if (y < BOARD_HEIGHT) { // Sides
                     if (y == foodY && x == foodX) {
                         System.out.print(ANSI_RED + FOOD_CELL + ANSI_RESET);
                     } else if (x == 0 || x == BOARD_WIDTH - 1) {
@@ -52,16 +53,16 @@ public class Board implements IBoard {
                     }
                 }
                 if (head.x == foodX && head.y == foodY) {
-                    snake.snakeExptendBody(head);
+                    snake.snakeExtendBody(head);
                     rndFoodPosition();
                 }
 
             }
-            System.out.println("");
+            System.out.println();
         }
 
         for (int i = 0; i < 14; ++i) { //FOR SPACE IN THE CONSOLE
-            System.out.println("");
+            System.out.println();
         }
     }
 
@@ -73,13 +74,10 @@ public class Board implements IBoard {
     }
 
     public boolean isValid() {
-        Point curHead = (Point) snakeBody.get(0);
-        if (curHead.x <= 0 || curHead.x >= BOARD_WIDTH - 1 || curHead.y <= 0 || curHead.y >= BOARD_HEIGHT - 1){
-            return (false);
-        }
-        return (true);
+        Point curHead = snakeBody.get(0);
+        return curHead.x > 0 && curHead.x < BOARD_WIDTH - 1 && curHead.y > 0 && curHead.y < BOARD_HEIGHT - 1;
     }
-    public boolean isCollition(Point head,List snakeBody ){
+    public boolean isCollision(Point head, List<Point>snakeBody ){
 
         for(int i = 1; i <snakeBody.size(); ++i){
             if(head.equals(snakeBody.get(i))){

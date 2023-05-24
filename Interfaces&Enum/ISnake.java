@@ -1,3 +1,4 @@
+/*package il.co.lird.FS133.Projects.SnakeGame;*/
 
 import java.awt.*;
 import java.util.List;
@@ -10,8 +11,7 @@ public interface ISnake {
 
     void snakeMove(Direction direction);
 
-    void snakeExptendBody(Point head);
-    int getSnakeSize();
+    void snakeExtendBody(Point head);
 
     List<Point> getSnakeBody();
 
