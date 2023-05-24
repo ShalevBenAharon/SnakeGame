@@ -15,11 +15,11 @@ Test your reflexes and strategic thinking as you maneuver the snake and try to e
 </p>
 <h2> Features:</h2>
 <p>
-    Intuitive controls: Use the arrow keys on your keyboard to control the snake's movement.
-    Growing snake: Each time the snake eats food, it grows longer, presenting new challenges and opportunities.
-    Avoid collisions: Be careful not to collide with the snake's own body or the edges of the game board.
-    High-score tracking: Compete with yourself or friends to achieve the highest score possible.
-    Reflex testing: Sharpen your reflexes and improve your hand-eye coordination while playing the game.
+    <b>* Intuitive controls:</b> Use the arrow keys on your keyboard to control the snake's movement.<br>
+    <b>* Growing snake:</b> Each time the snake eats food, it grows longer, presenting new challenges and opportunities.<br>
+    <b>* Avoid collisions:</b> Be careful not to collide with the snake's own body or the edges of the game board.<br>
+    <b>* High-score tracking:</b> Compete with yourself or friends to achieve the highest score possible.<br>
+    <b>* Reflex testing:</b> Sharpen your reflexes and improve your hand-eye coordination while playing the game.
 </p>
 <h2>How to Play:</h2>
 <p>
@@ -32,9 +32,9 @@ Test your reflexes and strategic thinking as you maneuver the snake and try to e
 </p>
 <h2>Getting Started:</h2>
 <p>
-    Prerequisites:<br>
+    <b>Prerequisites:</b><br>
     Make sure you have Java Development Kit (JDK) installed on your machine.
-    Installation: Clone or download the project source code from the repository. 
+    <b>Installation:</b> Clone or download the project source code from the repository. 
     Compile the Java code using your preferred Java development environment or command-line tools.
     Run the compiled Java application to start playing the Snake Game.
 </p>
