@@ -8,8 +8,6 @@ The game follows the principles of object-oriented programming (OOP) and uses th
 
 <h2> Description</h2>
 <p> 
-Description
-Welcome to the Snake Game! 
 The goal is to help the snake grow as large as possible without hitting its own body or the boundaries of the game board. 
 Test your reflexes and strategic thinking as you maneuver the snake and try to eat as much food as you can.
 </p>
